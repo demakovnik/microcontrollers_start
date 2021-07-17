@@ -85,7 +85,7 @@ volatile uint16_t Button_Count = 0;
 volatile uint8_t Result=0;
 volatile uint16_t randNum = 0;
 volatile uint16_t digit = 4;
-volatile uint16_t randNumSPI=9999;
+volatile uint16_t valueSPI=9999;
 volatile uint8_t isHFlag = 0;
 uint8_t rxBuffer = 0;
 
@@ -161,14 +161,14 @@ int main(void)
 
 	  HAL_SPI_Transmit(&hspi1, &randH, 1, 1000);
 	  HAL_SPI_Receive(&hspi3, &rxBuffer, 1,1000);
-	  randNumSPI = ((uint16_t)rxBuffer)<<8;
+	  valueSPI = ((uint16_t)rxBuffer)<<8;
 	  HAL_SPI_Transmit(&hspi1, &randL, 1, 1000);
 	  HAL_SPI_Receive(&hspi3, &rxBuffer,1, 1000);
-	  randNumSPI |= rxBuffer;
+	  valueSPI |= rxBuffer;
 	 // randNumSPI = 1234;
 
 	      uint8_t transmitData = 0;
-	 	  uint16_t tempRand = randNumSPI;
+	 	  uint16_t tempRand = valueSPI;
 	 	  if (tempRand >= 0 && tempRand<=9) {
 	 		  reset_all();
 	 		  dig4_set();

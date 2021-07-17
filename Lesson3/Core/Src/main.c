@@ -84,7 +84,7 @@ volatile uint8_t extiFlag = 0;
 volatile uint8_t Button_State = 0;
 volatile uint16_t Button_Count = 0;
 volatile uint8_t Result=0;
-volatile uint16_t randNum = 2358;
+volatile uint16_t randNum = 0;
 volatile uint16_t digit = 4;
 
 /* USER CODE END PV */
@@ -144,7 +144,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
   reset_all();
+  seed = rand()%(10000);
   HAL_TIM_Base_Start(&htim3);
+  srand(seed);
+  randNum = rand()%(10000);
 
 
   while (1)
@@ -417,7 +420,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 		randNum = rand()%(10000);
 
 	} else __NOP();
-
 }
 
 
