@@ -276,7 +276,6 @@ void ILI9341_SoftReset(void)
 	uint8_t cmd;
 	cmd = 0x01; //Software reset
 	DC_L();
-	CS_L();
 	if (HAL_SPI_Transmit(&hspi1, &cmd, 1, 1000) != HAL_OK) {
 		Error_Handler();
 	}
@@ -367,6 +366,6 @@ static void DC_H(void)
 
 static void LED_H(void)
 {
-	//HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
 }
 

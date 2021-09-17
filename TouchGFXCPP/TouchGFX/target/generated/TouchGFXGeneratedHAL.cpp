@@ -37,7 +37,7 @@ using namespace touchgfx;
  */
 
 extern "C" int touchgfxDisplayDriverTransmitActive();
-extern "C" void touchgfxDisplayDriverTransmitBlock(const uint8_t* pixels, uint16_t x, uint16_t y, uint16_t w, uint16_t h);
+extern "C" void touchgfxDisplayDriverTransmitBlock(const uint16_t* pixels, uint16_t x, uint16_t y, uint16_t w, uint16_t h);
 extern "C" void touchgfxSignalVSync(void);
 
 // Block Allocator for Partial Framebuffer strategy
@@ -114,7 +114,7 @@ void TouchGFXGeneratedHAL::flushFrameBuffer(const touchgfx::Rect& rect)
     // Get pointer to block buffer and coordinates of the rect
     const uint8_t* pixels = frameBufferAllocator->getBlockForTransfer(r);
     // Start transmission of the block
-    touchgfxDisplayDriverTransmitBlock((uint8_t*)pixels, r.x, r.y, r.width, r.height);
+    touchgfxDisplayDriverTransmitBlock((uint16_t*)pixels, r.x, r.y, r.width, r.height);
   }
 }
 
@@ -166,7 +166,7 @@ void startNewTransfer()
     // Get pointer to block buffer and coordinates of the rect
     const uint8_t* pixels = fba->getBlockForTransfer(r);
     // Start transmission of the block
-    touchgfxDisplayDriverTransmitBlock((uint8_t*)pixels, r.x, r.y, r.width, r.height);
+    touchgfxDisplayDriverTransmitBlock((uint16_t*)pixels, r.x, r.y, r.width, r.height);
   }
 }
 

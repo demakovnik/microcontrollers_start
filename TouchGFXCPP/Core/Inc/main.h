@@ -62,6 +62,8 @@ void Error_Handler(void);
 #define T_IRQ_GPIO_Port GPIOB
 #define T_SCK_Pin GPIO_PIN_10
 #define T_SCK_GPIO_Port GPIOB
+#define LED_Pin GPIO_PIN_6
+#define LED_GPIO_Port GPIOC
 #define RESET_Pin GPIO_PIN_5
 #define RESET_GPIO_Port GPIOB
 #define SPI1_NSS_Pin GPIO_PIN_6
