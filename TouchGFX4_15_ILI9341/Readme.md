@@ -1,4 +1,4 @@
-# TouchGFX Test
+# TouchGFX with ILI9341 LCD display (SPI)
 
 Welcome to my github repository. This repository is designed to explore the capabilities of the TouchGFX framework
 ## Hardware 
