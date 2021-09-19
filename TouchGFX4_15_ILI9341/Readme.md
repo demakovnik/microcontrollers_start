@@ -3,7 +3,7 @@
 Welcome to my github repository. This repository is designed to explore the capabilities of the TouchGFX framework
 ## Hardware 
  * A NUCLEO-F429ZI board with STM32F429ZI (180 MHz SYSCLK)
- * A TFT-LCD with ILI9341 driver and XPT2046 touchscreen controller from [AliExpress](https://www.aliexpress.com/item/32815224002.html?spm=a2g0s.9042311.0.0.6f9d4c4dv0T4OV), with SPI (90 MHz SCK)
+ * A TFT-LCD with ILI9341 driver and XPT2046 touchscreen controller from [AliExpress](https://aliexpress.ru/item/4000839084701.html?spm=a2g39.orderlist.0.0.7fef4aa6qTQiF1&_ga=2.173059684.676462561.1632056866-724651925.1627183667), with SPI (90 MHz SCK)
 
 ### Wiring
 
