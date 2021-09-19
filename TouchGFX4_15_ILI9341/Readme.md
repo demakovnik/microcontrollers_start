@@ -7,7 +7,7 @@ Welcome to my github repository. This repository is designed to explore the capa
 
 ### Wiring
 
-|LCD Board|Nucleo   |STM32F411RE| Description       |
+|LCD Board|Nucleo   |STM32F429ZI| Description       |
 | ------- |:-----:  | ---------:|	--------------:	|
 |VCC      |CN8-9    | -         | 5 V               |
 |GND      |CN6-11   | -         | GND	            |
