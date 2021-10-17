@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>ESP 32 Illumination Control</title>
+
+  <meta name="viewport" content="width=device-width, initialscale=1">
+
+  <link rel="icon" href="data:,">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/jquery.js">
+  var threshold;
+  </script>
+  
+
+</head>
+
+<body>
+
+  <h1>ESP32 Illumination Control</h1>
+
+  <div>Threshold: <span id='threshold'></span></div><br>
+
+  <script>  
+    function show()  
+    {  
+      $.get('/illumination', function(data) {
+            $('#threshold').html(data['threshold']);
+            threshold = data['threshold'];
+            document.getElementById("thresholdSlider").setAttribute("value",threshold);
+        });
+    }  
+  
+    $(document).ready(function(){  
+        show();  
+        setInterval('show()',200);  
+    });  
+</script> 
+<div>
+  <form>
+    <input id='thresholdSlider' type="range" id="volume" name="threshold"
+         min="0" max="4095"><br>
+    <label for="threshold">Set threshold</label>
+    <input type="submit" value="Set Threshold">
+  </form>
+</div> 
+</body>
+</html>
